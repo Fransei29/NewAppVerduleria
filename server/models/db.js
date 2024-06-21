@@ -23,9 +23,10 @@ const Product = sequelize.define('Product', {
     allowNull: false
   },
   id: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   }
 });
 

@@ -11,9 +11,9 @@ app.use(express.json());
 app.use('public', express.static(path.join(__dirname, 'public')));
 
 // Ruta para servir el archivo JSON
-app.get('/products.json', (req, res) => {
-  res.sendFile(path.join(__dirname, 'products.json'));
-});
+// app.get('/products.json', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'products.json'));
+// });
 
 // Ruta para listar productos
 app.get('/products.json', async (req, res) => {
@@ -28,7 +28,7 @@ app.get('/products.json', async (req, res) => {
 // Ruta para comprar un producto
 app.post('/comprar', async (req, res) => {
   try {
-    const { items } = req.body; // Array de { product_id, quantity }
+    const { items } = req.body;
     let totalAmount = 0;
 
     for (const item of items) {
